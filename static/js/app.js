@@ -1,5 +1,3 @@
-// Another methods to go on with addressBook
-
 class Contact {
     constructor(firstName, lastName, phoneNumber, emailAddress) {
         this._firstName = firstName;
@@ -34,7 +32,7 @@ class Contact {
     }
     set emailAddress(value) {
         this._emailAddress = value;
-    }    
+    }
 }
 
 class ExtendedContact extends Contact {
@@ -42,14 +40,13 @@ class ExtendedContact extends Contact {
         super(firstName, lastName, phoneNumber, emailAddress);
         this._additionalInfo = additionalInfo;
     }
-    
 
-    get additionalInfo(){
-        return this._additionalInfo
+    get additionalInfo() {
+        return this._additionalInfo;
     }
 
-    set additionalInfo(value){
-        this._additionalInfo = value
+    set additionalInfo(value) {
+        this._additionalInfo = value;
     }
 }
 
@@ -122,10 +119,9 @@ document.querySelector('#form').addEventListener('submit', (e) => {
     const phoneNumber = document.querySelector('#phone-number').value;
     const emailAddress = document.querySelector('#email-address').value;
 
-    const contact = new Contact(firstName, lastName, phoneNumber, emailAddress, additionalInfo);
+    const contact = new Contact(firstName, lastName, phoneNumber, emailAddress);
     addressBook.addContact(contact);
     addressBook.displayContact();
 });
 
 addressBook.displayContact();
-
