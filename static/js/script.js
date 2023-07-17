@@ -49,6 +49,49 @@ class AddressBook {
         this.contacts.push(contact)
     }
 
+    displayContact() {
+        const contactContainer = document.querySelector('#contacts')
+        contactContainer.innerHTML = ''
+
+        if (this.contacts.length === 0) {
+            contactContainer.textContent = "No contact"
+        } else {
+            this.contacts.forEach((contact, index) => {
+                const contactElement = document.createElement('div')
+                contactElement.innerHTML = `
+                <h3>${contact.firstName}</h3>
+                <h3>${contact.lastName}</h3>
+                <p>Ingredients: ${contact.phoneNumber}</p>
+                <p>Instructions: ${contact.emailAddress}</p>
+                <button class="delete-button">Delete</button>
+                <button class="edit-button">Edit</button>
+                `;
+                contactContainer.appendChild(contactElement);
+
+
+            })
+        }
+    }
+
+    deleteContact(index) {
+        this.contacts.splice(index, 1)
+    }
+
+    editContact(index) {
+        const contact = this.contacts[index];
+
+        const firstName = prompt('Enter new firstName:', contact.firstName);
+        const lastName = prompt('Enter new lastName:', contact.lastName);
+        const phoneNumber = prompt('Enter new phoneNumber:', contact.phoneNumber);
+        const emailAddress = prompt('Enter new emailAddress:', contact.emailAddress);
+
+        contact.firstName = firstName;
+        contact.lastName = lastName;
+        contact.phoneNumber = phoneNumber;
+        contact.emailAddress = emailAddress;
+        this.displayContact();
+        // clearForm();
+    }
 
 }
 
