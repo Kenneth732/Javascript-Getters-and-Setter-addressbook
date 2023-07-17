@@ -36,3 +36,21 @@ class Contact {
         this._emailAddress = value;
     }    
 }
+
+
+class ExtendedContact extends Contact {
+    constructor(firstName, lastName, phoneNumber, emailAddress, additionalInfo) {
+        super(firstName, lastName, phoneNumber, emailAddress);
+        this._additionalInfo = additionalInfo;
+    }
+    
+
+    get additionalInfo(){
+        return this._additionalInfo
+    }
+
+    set additionalInfo(value){
+        this._additionalInfo = value
+    }
+}
+
