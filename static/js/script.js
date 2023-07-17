@@ -68,7 +68,16 @@ class AddressBook {
                 `;
                 contactContainer.appendChild(contactElement);
 
+                const deleteButton = document.querySelector('.delete-button')
+                deleteButton.addEventListener('click', () => {
+                    this.deleteContact(index);
+                    this.displayContact();
+                });
 
+                const editButton = contactElement.querySelector('.edit-button');
+                editButton.addEventListener('click', () => {
+                    this.editContact(index);
+                });
             })
         }
     }
