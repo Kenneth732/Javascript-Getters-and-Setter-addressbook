@@ -39,3 +39,12 @@ class Contact {
     }
 
 }
+
+class AddressBook {
+    constructor() {
+        this.contacts = [];
+    }
+
+
+}
+
