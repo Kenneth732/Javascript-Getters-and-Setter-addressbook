@@ -45,6 +45,10 @@ class AddressBook {
         this.contacts = [];
     }
 
+    addContact(contact) {
+        this.contacts.push(contact)
+    }
+
 
 }
 
