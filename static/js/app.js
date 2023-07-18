@@ -52,6 +52,7 @@ class ExtendedContact extends Contact {
     }
 }
 
+// addressbook method to handle contact array and other methods
 class AddressBook {
     constructor() {
         this.contacts = [];
