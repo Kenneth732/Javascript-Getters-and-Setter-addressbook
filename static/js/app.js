@@ -7,6 +7,7 @@ class Contact {
         this._emailAddress = emailAddress;
     }
 
+    // adding setters and getters
     get firstName() {
         return this._firstName;
     }
