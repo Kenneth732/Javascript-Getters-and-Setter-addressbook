@@ -1,3 +1,4 @@
+// this for handle user infor 
 class Contact {
     constructor(firstName, lastName, phoneNumber, emailAddress) {
         this._firstName = firstName;
